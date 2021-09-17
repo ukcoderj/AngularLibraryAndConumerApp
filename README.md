@@ -1,4 +1,4 @@
-# AngularLibAndMain
+# Angular Library and Project utilising the library
 Angular 12 project calling a library project
 
 This tutorial will detail how to:
