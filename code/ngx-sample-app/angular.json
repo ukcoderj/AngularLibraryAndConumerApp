@@ -88,6 +88,13 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "sourceMap": {
+              "scripts": true,
+              "styles": true,
+              "vendor": true
+            }
+          },
           "configurations": {
             "production": {
               "browserTarget": "ngx-sample-app:build:production"

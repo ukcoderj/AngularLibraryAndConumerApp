@@ -137,9 +137,31 @@ Sample below shortened for brevity.
 ````
 
 
-16. In the command prompt for the app ({repo/code\ngx-sample-app>}) run `ng serve`.
+17. To this point, we can actually build everything, but we can't actually debug those libraries, so let's go ahead and fix that. In angular.json (code\ngx-sample-app\angular.json), update serve to include options for debugging libs too.
 
-17. Visit https://localhost:4200 to view the results.
+Again, shortened for brevity - starting at line 89 in my sample $projects.ngx-sample-app.architect.serve:
+
+````
+"serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "sourceMap": {
+              "scripts": true,
+              "styles": true,
+              "vendor": true
+            }
+          },
+
+
+````
+
+
+
+18. In the command prompt for the app ({repo/code\ngx-sample-app>}) run `ng serve`.
+
+19. Visit https://localhost:4200 to view the results.
+
+20. In chrome, you can now press F12, then go to sources, Ctrl+P to search files and type 'test-view' to get to the test-view component.
 
 
 
