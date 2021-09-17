@@ -1,7 +1,13 @@
 # AngularLibAndMain
-Angular project calling a library project
+Angular 12 project calling a library project
 
-The starting point was this tutorial, but it's leaves you hanging wrt adding components, so this goes further - https://dev.to/patelvimal/how-to-use-angular-library-locally-with-hot-module-reload-2m35
+This tutorial will detail how to:
+- Create an angular library
+- Create a component in that library
+- Export that component for use in an application
+- Create an angular application
+- Import the local component library
+- Access debugging for the library from the main application.
 
 
 ## Creating the shared library
