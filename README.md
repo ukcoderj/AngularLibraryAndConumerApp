@@ -79,10 +79,67 @@ export class MySharedComponentsModule { }
 13. now we need to reference the local library using npm install with a local link. Remember to link to the dist folder.
 
 
+`npm install "file://../ngx-my-shared-libs//dist//my-shared-components"`
 
 
+14. Import the component into your application module (code\ngx-sample-app\src\app\app.module.ts)
 
-14. sdfs
+````
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { MySharedComponentsModule } from 'my-shared-components';
+
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MySharedComponentsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+````
+
+15. Open up code\ngx-sample-app\src\app\app.component.html
+
+Delete the default contents and update like so:
+
+````
+App Component
+
+<lib-test-view></lib-test-view>
+````
+
+16. Go to the angular.json in ngx-sample-app (code\ngx-sample-app\angular.json) and add preserveSymLinks to the biuld options 
+
+Sample below shortened for brevity.
+
+````
+
+"architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "preserveSymlinks": true,
+            "outputPath": "dist/ngx-sample-app",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+
+````
+
+
+16. In the command prompt for the app ({repo/code\ngx-sample-app>}) run `ng serve`.
+
+17. Visit https://localhost:4200 to view the results.
 
 
 

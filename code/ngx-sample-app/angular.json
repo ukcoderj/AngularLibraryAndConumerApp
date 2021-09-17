@@ -38,6 +38,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "preserveSymlinks": true,
             "outputPath": "dist/ngx-sample-app",
             "index": "src/index.html",
             "main": "src/main.ts",
